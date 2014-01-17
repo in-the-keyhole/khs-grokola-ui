@@ -1,0 +1,10 @@
+{
+  "http": {
+    "port": 8080
+  },
+  "api": {
+    "host": "localhost",
+    "port": 9080,
+    "context": "khs-command-ref"
+  }
+}

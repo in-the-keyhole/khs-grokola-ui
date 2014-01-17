@@ -1,0 +1,210 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Command Grok</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+a.txt-small {
+    font-size: 12px;
+}
+
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;
+}
+
+a.menu:after, .dropdown-toggle:after {
+    content: none;
+}
+
+</style>
+<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+<script data-main="responsivemain.js" src="libs/require/require.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsivemain" src="./responsivemain.js"></script>
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="backbone" src="libs/backbone-0.9.2.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="libs/jquery-1.7.2.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="underscore" src="libs/underscore-1.2.2.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bootstrap" src="libs/bootstrap.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/app" src="responsive/app.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/router/workspaceRouter" src="responsive/router/workspaceRouter.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery.cookie" src="libs/jquery.cookie.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/navBarView" src="responsive/view/navBarView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/recent/recentCommandsView" src="responsive/view/recent/recentCommandsView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/homeSearchView" src="responsive/view/homeSearchView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/collection.category" src="model/collection.category.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/collection.command" src="model/collection.command.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/collection.search" src="model/collection.search.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="libs/require/text.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/navBarCatView" src="responsive/view/navBarCatView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/navBarMoreView" src="responsive/view/navBarMoreView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/navBarMoreCatView" src="responsive/view/navBarMoreCatView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/thumbview/commandThumbView" src="responsive/view/thumbview/commandThumbView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/model.category" src="model/model.category.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/model.command" src="model/model.command.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/collection.reference" src="model/collection.reference.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/navBarCatRefView" src="responsive/view/navBarCatRefView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="model/model.reference" src="model/model.reference.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/referencesView" src="responsive/view/referencesView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/referencesTabView" src="responsive/view/referencesTabView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/referencesPaneView" src="responsive/view/referencesPaneView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/referencesBreadcrumbView" src="responsive/view/referencesBreadcrumbView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/referencesPaneCommView" src="responsive/view/referencesPaneCommView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/categoriesView" src="responsive/view/categoriesView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/categoriesTabView" src="responsive/view/categoriesTabView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/categoriesPaneView" src="responsive/view/categoriesPaneView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/categoriesPaneRefView" src="responsive/view/categoriesPaneRefView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/commandsView" src="responsive/view/commandsView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/commandsTabView" src="responsive/view/commandsTabView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/commandsPaneView" src="responsive/view/commandsPaneView.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="responsive/view/commandsBreadcrumbView" src="responsive/view/commandsBreadcrumbView.js"></script></head>
+
+<body>
+    
+
+    <div id="nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner" style="padding-left:10px; padding-right:10px;">
+    <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a href="index.html" class="brand">Command Grok</a>
+        <div class="nav-collapse collapse">
+            <ul class="nav" id="navbar-categories"><li class="dropdown">                            <a href="#category/view/1">Operating System</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel"><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/1">Unix</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/3">Windows</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/35">Linux</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/48">test for logging</a></li></ul>
+                        </li><li class="dropdown">                            <a href="#category/view/2">Version Control</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel"><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/2/2">Git</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/2/23">CVS</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/2/24">Subversion</a></li></ul>
+                        </li><li class="dropdown">                            <a href="#category/view/3">Relational Database</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel"><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/3/34">DB2 SQL Error Codes </a></li></ul>
+                        </li><li class="dropdown">                            <a href="#">More</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel">
+                            <li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/118">Language</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/163">Test Category</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/164">Favorite Quotes</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/165">Another Category</a></li></ul>
+                        </li></ul>
+        </div>
+    </div>
+</div>
+
+</div>
+    
+    <div id="page-content" class="container-fluid">        <div id="breadcrumb"><ul class="breadcrumb">            <li><a href="index.html">Home</a><span class="divider">&gt;</span></li>
+            <li><a href="#category/view/2">Version Control</a><span class="divider">&gt;</span></li>
+            <li><a href="#reference/view/2/24">Subversion</a><span class="divider">&gt;</span></li>
+            <li class="active">Commands</li></ul></div>
+
+        <div id="reference-content" class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
+            <ul id="nav-tabs" class="nav nav-tabs"><li>                <a href="#tab104" id="viewCommand" data-toggle="tab"><strong>add</strong></a></li><li>                <a href="#tab105" id="viewCommand" data-toggle="tab"><strong>checkout</strong></a></li><li>                <a href="#tab108" id="viewCommand" data-toggle="tab"><strong>checkout</strong></a></li><li class="">                <a href="#tab113" id="viewCommand" data-toggle="tab"><strong>copy</strong></a></li><li class="">                <a href="#tab106" id="viewCommand" data-toggle="tab"><strong>create</strong></a></li><li class="active">                <a href="#tab111" id="viewCommand" data-toggle="tab"><strong>delete</strong></a></li><li>                <a href="#tab114" id="viewCommand" data-toggle="tab"><strong>diff</strong></a></li><li>                <a href="#tab107" id="viewCommand" data-toggle="tab"><strong>import</strong></a></li><li>                <a href="#tab109" id="viewCommand" data-toggle="tab"><strong>list</strong></a></li><li>                <a href="#tab110" id="viewCommand" data-toggle="tab"><strong>status</strong></a></li><li>                <a href="#tab112" id="viewCommand" data-toggle="tab"><strong>update</strong></a></li></ul>
+            <div id="tab-content" class="tab-content"><div class="tab-pane" id="tab104">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>add</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Add file or directory for CM control. After adding commit must be issued to upload</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote>Add Directory 
+<pre>$ svn add <filename_or_dir>
+</filename_or_dir></pre></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab105">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>checkout</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Checkout repository files and subdirectory, creates working copy of files of directories.
+
+</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote><b>-r</b>-Specify version to checkout</blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote>Checkout project from repository<p></p>
+<pre>svn checkout http://nodename/repos/svn/trunk/parentPath</pre>
+</blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab108">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>checkout</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Checkout project to local working directory from repository</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote><pre>svn checkout file:///repository_name/project/trunk project
+</pre>
+</blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab113">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>copy</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Make a copy of the current working directory in the repository. Tag this copy with a version number. Used to create interim project releases. Referred to as tagging the project.</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote><pre>svn copy http://host_name/repos/project/trunk http://host_name/repos/project/tags/0.1.0 -m "Tagging the 0.1.0 release of the project"</pre></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab106">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>create</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Create a subversion repository</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote>From a local drive project directory 
+<pre>svnadmin create  <path to="" repository="">
+</path></pre></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane active" id="tab111">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>delete</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Delete files/directories from repository. Commit must be performed before elements are removed</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote><pre>svn delete <file_or_dir_name>
+</file_or_dir_name></pre>
+Delete and specify a message
+<pre>svn delete -m "Deleting project dir" http://localhost/svn_dir/repository/project_dir
+</pre>
+Network
+<pre>svn delete -m "Deleting project dir" http://localhost/svn_dir/repository/project_dir</pre></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab114">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>diff</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Show differences between working directory and repository</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote><pre>svn diff
+</pre></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab107">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>import</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Import a new project into the subversion repository from a local drive.</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote><b>-m</b> Specify a commit message</blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote>Import project to repository with message
+<pre>svn import project file:///repository_name/project -m "First Import"
+</pre></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab109">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>list</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Get a list of projects in a repository</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote><pre>svn list --verbose file:///repository_name/project
+</pre></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab110">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>status</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>See what has been updated in your working directory compared with the repository</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote><pre>svn status
+</pre></blockquote><p></p>
+                        </div>
+                    </div></div><div class="tab-pane" id="tab112">
+                    <div class="row">
+                        <div id="tab-pane-refs" class="span6 offset1">
+                            <div class="text-info"><h3>update</h3></div>
+                            <p><strong>Description:</strong><br></p><blockquote>Update local working directory with latest from repository</blockquote><p></p>
+                            <p><strong>Options:</strong><br></p><blockquote></blockquote><p></p>
+                            <p><strong>Example:</strong><br></p><blockquote><pre>svn update
+</pre>
+</blockquote><p></p>
+                        </div>
+                    </div></div></div>
+        </div></div>
+    <!-- /container -->
+    
+<!--     <div class="navbar navbar-inverse navbar-fixed-bottom"> -->
+<!--         <div class="navbar-inner"> -->
+<!--             <span class="pull-right"><a class="brand" href="http://www.keyholesoftware.com/">Keyhole Software</a></span> -->
+<!--         </div> -->
+<!--     </div> -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+</body></html>

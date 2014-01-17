@@ -1,0 +1,19 @@
+
+<div class="accordian-group">
+    <div class="accordian-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#cmds-accordian" href="#collapse<%=id%>"><strong><%=name%></strong></a>
+        <div  class="pull-right">
+            <button type="button" class="btn btn-small" data-toggle="modal" id="editCommandModal"><i class="icon-edit"></i> Edit</button>
+            <button type="button" class="btn btn-small" data-toggle="modal" id="deleteCommandModal"><i class="icon-remove"></i> Delete</button>
+        </div>
+        <br /><br />
+    </div>
+    <div id="collapse<%=id%>" class="accordion-body collapse">
+        <div class="accordion-inner">
+            <p><strong>Description:</strong><br /><blockquote><%=description%></blockquote></p>
+            <p><strong>Options:</strong><br /><blockquote><%=options%></blockquote></p>
+            <p><strong>Example:</strong><br /><blockquote><%=example%></blockquote></p>
+        </div>
+    </div>
+</div>
+

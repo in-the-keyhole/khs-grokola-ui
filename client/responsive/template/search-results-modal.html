@@ -1,0 +1,38 @@
+<meta charset="utf-8">
+<div class="modal-header "  style="background: #FFFFEC">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-hidden="true" id="close">x</button>
+	<h4  id="size_disp">Search Results: <%=size%></h4></div>
+	<h4  id="non_size_disp">Search Results: <img src="img/ajax-loader.gif" id="loading_image"></h4>
+	
+		
+	
+
+</div>
+
+<div class="modal-body " style="background: #EEEED8" id="searchModal">
+
+	<div id="searchResultsContainer" data-role='content'>
+		<div class="modal-body">
+			<div class="carousel slide span12" id="myCarousel">
+
+				<div class="carousel-inner" id="carouselInner"></div>
+
+			</div>
+		</div>
+
+		<div>
+			<a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+			<a data-slide="next" href="#myCarousel"
+				class="right carousel-control">›</a>
+		</div>
+
+	</div>
+
+
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-small btn-cancel" data-dismiss="modal"
+		id="cancel">Cancel</button>
+</div>

@@ -1,0 +1,42 @@
+
+<div class="row">
+	<div class="span12">
+		<div id="tab-pane-refs" class="span7 offset1">
+		 <form class="form-horizontal">
+			
+		 <div id="name-input" class="control-group">
+			<div class="text-info">
+					<input type="text" id="name" value="<%=name%>" autofocus="autofocus"/>
+					 <span id="name-error" class="help-inline"></span>  
+			</div>
+		</div>
+		<div id="description-input" class="control-group">	
+			<p>
+				<strong>Description:</strong><br />
+			    <textarea id="description-text"><%=description%></textarea>
+			    <span id="description-error" class="help-inline"></span>
+			</p>
+		</div>	
+			<p>
+				<strong>Options:</strong><br />
+			    <textarea id="options-text"><%=options%></textarea>
+			</p>
+			<p>
+				<strong>Example:</strong><br />
+			    <textarea id="example-text"><%=example%></textarea>
+			</p>
+			<br />
+
+			<div class="text-info pull-right">
+				<a href="#" id="command-hist"><small><%=formattedDateTime%></small></a>
+			</div>
+
+			 <button class="btn btn-small btn-primary" id="save">Save</button>
+             <button class="btn btn-small btn-cancel" id="cancel">Cancel</button>
+
+             
+           </form>  
+		</div>
+	</div>
+</div>
+

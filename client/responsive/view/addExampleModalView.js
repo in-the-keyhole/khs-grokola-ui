@@ -1,0 +1,64 @@
+define([ 'jquery', 
+         'backbone', 
+         'underscore', 
+         'model/model.example',
+		'text!responsive/template/add-example-modal.html',
+		'app/app.securityutility',
+		'markitup',
+        'markitup_set'],
+		function($, Backbone, _,Model,Template,Security) {
+
+	return Backbone.View.extend({
+		className: 'modal modal-bigger fade',
+		show: function() {
+			$(this.el).modal('show');
+			
+			// Added this for correct vertical position
+			// This there's a bootstrap modal bug. Does not 
+			// work when resized...might have to calculate
+		    $(this.el).modal().css('margin', '0 0 0 -380px');
+		    $(this.el).modal().css('width', '800px');
+			
+		},
+		
+		events : {
+			'click button#close' : 'hide',
+			'click button#cancel' : 'hide',
+			'click button#submit' : 'save'
+		},
+		
+		'save' : function(event) {
+			event.preventDefault();
+			var obj = {
+				async: false,
+				url: 'sherpa/service/example/'+this.parent.parent.refId,
+				type: 'post',
+				beforeSend: function (request)
+				 {   // add secure token an userid to request header
+					Security.populateRequestHeader(request);		    
+				 },
+			};
+			this.model =  new Model();
+			this.model.save({
+				description: $('input#description').val(),
+				solution: $('textarea#solution').val()
+			}, obj );
+			this.hide();
+			this.parent.parent.collection.add(this.model);
+		},
+		
+		'hide' : function() {
+			$(this.el).modal('hide');
+			$(this.el).remove();
+		},
+		
+		render : function() {
+			var compiled_template = _.template(Template);
+			var $el = $(this.el);
+			$el.html(compiled_template());
+			$(this.el).find('#solution').markItUp(mySettings);
+			return this;
+		},
+	});
+
+});

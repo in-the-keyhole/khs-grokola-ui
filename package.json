@@ -1,0 +1,19 @@
+{
+  "name": "khs-grokola-ui",
+  "version": "1.0.0-SNAPSHOT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/in-the-keyhole/khs-grokola-ui.git"
+  },
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+  	"connect-history-api-fallback": "~0.0.4",
+    "express": "~3.4.8",
+    "http-proxy": "~0.10.4",
+    "nconf": "~0.6.9"
+  },
+  "devDependencies": {
+  }
+}

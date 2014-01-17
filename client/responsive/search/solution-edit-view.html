@@ -1,0 +1,17 @@
+ <div id="solution">
+     <form class="form-horizontal" name="add-category-form">
+          <div id="description-input" class="control-group">
+            <strong>Description:</strong>  <small>Tell us what this solution will do...</small></p>
+            <input class="span6" id="description" name="description" type="text" value="<%=description%>" autofocus="autofocus"/>
+            <span id="description-error" class="help-inline"></span>
+            </p>
+          </div>
+          <div id="solution-input" class="control-group"> 
+             <strong>Solution:</strong> </p>
+             <textarea rows="20" cols="80" id="solution-text"><%=solution%></textarea>
+             <span id="solution-error" class="help-inline"></span>
+          </div>
+          <button class="btn btn-small btn-primary" id="save">Save</button>
+          <button class="btn btn-small btn-cancel" id="cancel">Cancel</button>
+     </form>     
+ </div>

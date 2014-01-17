@@ -1,0 +1,163 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Command Grok</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+a.txt-small {
+    font-size: 12px;
+}
+
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;
+}
+
+a.menu:after, .dropdown-toggle:after {
+    content: none;
+}
+
+</style>
+<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../libs/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../libs/bootstrap.min.js"></script>
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    
+
+    <div id="nav-bar" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner" style="padding-left:10px; padding-right:10px;">
+    <div class="container-fluid">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <a href="index.html" class="brand">Command Grok</a>
+        <button class="btn btn-small btn-primary pull-right" id="login" data-toggle="modal" data-target="#signInModal">Sign In</button>
+        <div class="hide" id="signOut">
+            Welcome [Insert User Name here] 
+            <button class="btn btn-small btn-primary pull-right" id="logoff" data-toggle="modal" data-target="#signInModal">Sign Out</button>
+        </div>
+        
+        <div class="nav-collapse collapse">
+            <ul class="nav" id="navbar-categories"><li class="dropdown">                            <a href="#category/view/1">Operating System</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel"><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/1">Unix</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/3">Windows</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/35">Linux</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/1/48">test for logging</a></li></ul>
+                        </li><li class="dropdown">                            <a href="#category/view/2">Version Control</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel"><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/2/2">Git</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/2/23">CVS</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/2/24">Subversion</a></li></ul>
+                        </li><li class="dropdown">                            <a href="#category/view/3">Relational Database</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel"><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#reference/view/3/34">DB2 SQL Error Codes </a></li></ul>
+                        </li><li class="dropdown">                            <a href="#">More</a>
+                            <ul class="dropdown-menu" id="navbar-references" role="menu" aria-labelledby="dLabel">
+                            <li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/118">Language</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/163">Test Category</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/164">Favorite Quotes</a></li><li>                                <!--  category reference item -->
+                                <a tabindex="-1" href="#category/view/165">Another Category</a></li></ul>
+                        </li></ul>
+        </div>
+    </div>
+</div>
+
+</div>
+    
+    <div id="page-content" class="container-fluid">
+        
+        <div class="hero-unit" id="home-search" style="background: url(../img/home-search3.jpg) left bottom;color: white; text-shadow: black 0.2em 0.2em 0.2em;">            <h1>cGrok</h1>
+            <p>Command reference repository for (Version Control,Operating Systems, Languages, and more...)</p>
+            <form id="indexSearch" name="search">
+                <div>
+                    <input class="input input-xxlarge" name="searchText" type="text" id="indexSearchText" placeholder="How do I initialize a git repository?"><br>
+                    <input type="submit" class="btn btn-primary btn-large" id="callIndexSearchButton" value="Search" onsubmit="checkSearchValue();">
+                </div>          
+            </form></div>
+        
+        <!-- Recent Commands Thumbnails -->
+        <div class="row-fluid">
+            <div class="span12">    
+                <div class="well well-small">Your Recent Commands</div>
+                <div id="recent-commands">                <ul class="thumbnails" id="thumbnails"><li class="span2">                        <div class="thumbnail">
+                            <a href="#command/view/2/60"><h4>add</h4></a>
+                            <div>Adds files changes in your working directory to your index.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div><br>
+                            <a class="btn btn-primary" tabindex="-1" href="#reference/view/2/2">Git <i class="icon-chevron-right icon-white"></i></a>
+                        </div></li><li class="span2">                        <div class="thumbnail">
+                            <a href="#command/view/2/62"><h4>commit</h4></a>
+                            <div>Records commits changes that have been staged.
+
+Takes all of the changes written in the index, creates a new commit object pointing to it and sets...</div><br>
+                            <a class="btn btn-primary" tabindex="-1" href="#reference/view/2/2">Git <i class="icon-chevron-right icon-white"></i></a>
+                        </div></li><li class="span2">                        <div class="thumbnail">
+                            <a href="#command/view/2/5"><h4>clone</h4></a>
+                            <div>Clone a repository into a new directory&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div><br>
+                            <a class="btn btn-primary" tabindex="-1" href="#reference/view/2/2">Git <i class="icon-chevron-right icon-white"></i></a>
+                        </div></li><li class="span2">                        <div class="thumbnail">
+                            <a href="#command/view/2/102"><h4>checkout</h4></a>
+                            <div>Switch current development branch&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</div><br>
+                            <a class="btn btn-primary" tabindex="-1" href="#reference/view/2/2">Git <i class="icon-chevron-right icon-white"></i></a>
+                        </div></li><li class="span2">                        <div class="thumbnail">
+                            <a href="#command/view/2/101"><h4>branch</h4></a>
+                            <div>List, create and manage working development streams&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div><br>
+                            <a class="btn btn-primary" tabindex="-1" href="#reference/view/2/2">Git <i class="icon-chevron-right icon-white"></i></a>
+                        </div></li><li class="span2">                        <div class="thumbnail">
+                            <a href="#command/view/2/95"><h4>diff</h4></a>
+                            <div>Show diff changes between staged files or other branches&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div><br>
+                            <a class="btn btn-primary" tabindex="-1" href="#reference/view/2/2">Git <i class="icon-chevron-right icon-white"></i></a>
+                        </div></li></ul></div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="modal hide" id="signInModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+            <form>
+                <fieldset>
+                    <label>Username</label> 
+                    <input id="userid" type="text" placeholder="Username" > 
+    
+                    <label>Password</label>
+                    <input id="password" type="password" placeholder="Password">
+                </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <a href="#" class="btn btn-primary">Sign In</a>
+            </div>
+        </div>
+    <!-- /container -->
+    
+<!--     <div class="navbar navbar-inverse navbar-fixed-bottom"> -->
+<!--         <div class="navbar-inner"> -->
+<!--             <span class="pull-right"><a class="brand" href="http://www.keyholesoftware.com/">Keyhole Software</a></span> -->
+<!--         </div> -->
+<!--     </div> -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+</body></html>

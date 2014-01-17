@@ -1,0 +1,41 @@
+
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="close">x</button>
+                <h4 id="myModalLabel">Add Command</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="add-category-form">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls">
+                                <input class="span6" id="name" name="name" type="text" autofocus="autofocus"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="description">Description</label>
+                            <div class="controls">
+                                <textarea id="description" name="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="options">Options</label>
+                            <div class="controls">
+                                <textarea id="options" name="options"></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="description">Example</label>
+                            <div class="controls">
+                                <textarea id="example" name="example"></textarea>
+                            </div>
+                        </div>
+                        
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-small btn-primary btn-submit" id="submit">Save</button>
+                <button class="btn btn-small btn-cancel" data-dismiss="modal" id="cancel">Cancel</button>
+            </div>

@@ -1,0 +1,28 @@
+
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="close">x</button>
+                <h4 id="myModalLabel">Add Example</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" name="add-category-form">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="name">Description</label>
+                            <div class="controls">
+                                <input class="span6" id="description" name="description" type="text" autofocus="autofocus"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="description">Solution</label>
+                            <div class="controls">
+                                <textarea id="solution" name="solution"></textarea>
+                            </div>
+                        </div>                        
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-small btn-primary btn-submit" id="submit">Save</button>
+                <button class="btn btn-small btn-cancel" data-dismiss="modal" id="cancel">Cancel</button>
+            </div>
