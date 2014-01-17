@@ -31,7 +31,7 @@ Install Node.js (see above)
 
 Use git to clone the project from github.
 
-To start and run from command line, got the the khs-grokola-ui directory. Type node server/server.js
+To start and run from command line, go to the khs-grokola-ui directory. Type node server/server.js
 
 Start khs-command-ref which runs on port 9080.
 
