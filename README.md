@@ -22,6 +22,7 @@ see khs-command-ref readme.
 Architecture
 ------------
 Client: Node,Backbone,Require,Bootstrap SPA
+
 Sever Side (see khs-command-ref): Java, Sherpa enabled restful endpoints, Spring IOC, JPA/Hibernate
 
 Setup 
