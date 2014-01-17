@@ -46,17 +46,20 @@ Public cgrok UI elements are located in the client/responsive folder
 
 Models
 ------
-Backbone.js models are defined in client/model
+Backbone.js models are defined in client/model folder
 
 Admin User Interface
 --------------------
-client/admin
+client/admin folder
 
 Node Settings
 -------------
 server/server.js contains everything needed to start up using Node.
+
 server/config/config.json controls what ports it will run on and the connection to the server side Java endpoints.
+
 node_modules directory contains all the required files that would come in from npm.
+
 package.json has the dependencies for npm and what packages will be installed
 
 
